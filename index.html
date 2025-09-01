@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-title" onclick="loadPage('home')">Timesheet</div>
+         <div>
+            <label for="group"></label>
+            <select id="group" onchange="fetchData()">
+                <option value="grup-a">Group A</option>
+                <option value="grup-b">Group B</option>
+                <option value="grup-c">Group C</option>
+                <option value="grup-c">Group D</option>
+            </select>
+         </div>
+         <div class="inputForm">
+            <label for ="remarks">Remarks</label>
+            <input type="text" id="remarks" placeholder="Masukkan remarks...">
+         </div>
+         <div class="inputForm">
+            <label for ="justification">Justification</label>
+            <input type="text" id="justification" placeholder="Masukkan justification...">
+         </div>
+         <button class="button-submit" onclick="fetchData()">Submit</button>
+    </header>
+    <main>
+        <div id="containerTable" class="containerTable">
+            <div>
+                <label for="monthSelect">Bulan:</label>
+                <select id="monthSelect" onchange="fetchData()">
+                    <option value="0">Januari</option>
+                    <option value="1">Februari</option>
+                    <option value="2">Maret</option>
+                    <option value="3">April</option>
+                    <option value="4">Mei</option>
+                    <option value="5">Juni</option>
+                    <option value="6">Juli</option>
+                    <option value="7">Agustus</option>
+                    <option value="8">September</option>
+                    <option value="9">Oktober</option>
+                    <option value="10">November</option>
+                    <option value="11">Desember</option>
+                </select>
+                
+                <label for="yearSelect">Tahun:</label>
+                <select id="yearSelect" onchange="fetchData()"></select>
+            </div>
+            <div style="height: 20px;"></div>
+            <table>
+                
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Working Category</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Remarks</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <div id="container" class="container">
+            <div class="copy-container">
+                <button id="copyButton" class="copy-button" onclick="copyToClipboard()">Copy</button>
+            </div>
+            <pre id="output">Mengambil data...</pre>
+        </div>
+    
+    </main>
+    <footer>
+        <p>&copy; hartyleif</p>
+    </footer>
+</body>
+</html>
